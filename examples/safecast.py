@@ -37,7 +37,7 @@ HEIGHT = 100
 LOGGING_PERIOD = 5
 
 if __name__ == "__main__":
-    print("Logging each {0} minutes.".format(LOGGING_PERIOD))
+    print(("Logging each {0} minutes.".format(LOGGING_PERIOD)))
     safecast = SafecastPy.SafecastPy(api_key=API_KEY, api_url=SAFECAST_INSTANCE)
     # Declare the Device used. If it already exists the API will just ignore it.
     device_id = safecast.add_device(json={
@@ -51,7 +51,7 @@ if __name__ == "__main__":
             time.sleep(LOGGING_PERIOD * 60)
             try:
                 readings = radiationWatch.status()
-                print("Logging... {0}.".format(readings))
+                print(("Logging... {0}.".format(readings)))
                 payload = {
                     'latitude': MY_LOCATION['latitude'],
                     'longitude': MY_LOCATION['longitude'],
@@ -65,8 +65,8 @@ if __name__ == "__main__":
                 if HEIGHT:
                     payload['height'] = HEIGHT
                 measurement = safecast.add_measurement(json=payload)
-                print("Ok. Measurement published with id {0}".format(
-                    measurement['id']))
+                print(("Ok. Measurement published with id {0}".format(
+                    measurement['id'])))
             except Exception as e:
                 # A catch-all to keep the thing alive even if we have transient
                 # network or service errors.

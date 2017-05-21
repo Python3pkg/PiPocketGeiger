@@ -15,6 +15,6 @@ if __name__ == "__main__":
     with RadiationWatch(24, 23) as radiationWatch:
         while 1:
             # ... and simply print readings each 5 seconds.
-            print(radiationWatch.status())
+            print((radiationWatch.status()))
             time.sleep(5)
             # That's all.

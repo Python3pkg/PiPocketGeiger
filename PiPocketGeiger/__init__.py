@@ -151,5 +151,5 @@ if __name__ == "__main__":
         radiationWatch.registerRadiationCallback(onRadiation)
         radiationWatch.registerNoiseCallback(onNoise)
         while 1:
-            print(radiationWatch.status())
+            print((radiationWatch.status()))
             time.sleep(5)
